@@ -19,7 +19,7 @@ function loadBackground(){
 }
 
 
-function drawText(self, isQuote){
+function drawText(){
     loadBackground();
     quote = document.getElementById('quote-text').value;
     author = document.getElementById('author').value;
@@ -97,7 +97,6 @@ function drawText(self, isQuote){
             });
     }
     
-    console.log(lines.length);
     var topMargin = 0;
     if(lines.length > 0){
         topMargin = canvas.height - (y - lines[0].y);
@@ -108,7 +107,14 @@ function drawText(self, isQuote){
         line = lines[n];
         context.fillText(line.text, line.x, line.y + topMargin);
     }
-    
+    var pngUrl = canvas.toDataURL();
+    let imageLink = document.getElementById('link-to-download');
+    imageLink.href = pngUrl;
+    imageLink.download =  (Math.floor(Math.random() * 100) + 1)+"-pwn-quote-maker.png";
+    imageLink.style.display = "block";
+    if(lines.length <= 0){
+        imageLink.style.display = "none";
+    }
   }
 
 loadBackground();

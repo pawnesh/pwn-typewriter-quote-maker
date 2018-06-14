@@ -1,35 +1,55 @@
 <!DOCTYPE HTML>
-<html>
+<html lang="en">
     <head>
-        <title>PWN Quote Maker</title>
+        <meta charset="utf-8" />
+        <title>PWN Quote Maker: Create your quote with typewriter look & feel</title>
+        <meta name="description" content="A tool to let you create your quote online for free. It gives your quote a typewriter typed look and feel. To save your quote just right click on image and do save as image." />
+        <meta name="keywords" content="quote maker, typerwiter look & feel, create your own quote" />
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
         <style>
             @font-face {
                 font-family: "Traveling _Typewriter Regular";
                 src: url('TravelingTypewriter.ttf');
             }
-            
             header{
-                font-size:50px;
+                padding: 20px;
+                background: #fafafa;
+                color: #666;
+                border-bottom: 1px solid #ebebeb;
+            }
+            header h1{
+                font-family: "Traveling _Typewriter Regular";
+            }
+            #link-to-download{
+                display: none;
             }
         </style>
     </head>
     <body>
         <header>
-            <center>PWN Quote Maker</center>
+            <center><h1>PWN Quote Maker</h1></center>
         </header>
-        <hr/>
+        <br/>
         <div class="container">
             <div class="row">
                 <div class="col-md-6 col-xs-12">
-                    <textarea id="quote-text" class="form-control" placeholder="Write your quote here" onchange="drawText(this,true)"></textarea>
+                    <textarea id="quote-text" class="form-control" placeholder="Write your quote here" onchange="drawText()" style="height: 249px;"></textarea>
                     <br/>
-                    <input type="text" id="author" class="form-control" placeholder="Author" onchange="drawText(this,false)"/>
+                    <input type="text" id="author" class="form-control" placeholder="Author" onchange="drawText()"/>
                     <hr/>
                     <p class="text-muted">*Right click on image to save</p>
                 </div>
                 <div class="col-md-6 col-xs-12">
                     <canvas id="quote" style="width: 100%;"></canvas>
+                    <br/>
+                    <a href="" class="btn btn-primary" id="link-to-download" target="_blank">Download</a>
+                </div>
+            </div>
+            <hr/>
+            <div class="row">
+                <div class="col-md-12" style="text-align: center;">
+                    You can appriceate my work by donating Rs.1 through PayTm<br/>
+                    <img src="paytm.jpeg" style="width: 200px;"/>
                 </div>
             </div>
         </div>
