@@ -31,7 +31,7 @@ function drawText(){
     var imageObj = new Image();
     imageObj.onload = function() {
         context.drawImage(this, 0, 0, canvas.width, canvas.height);
-        context.filter = 'blur(1px)';
+        //~ context.filter = 'blur(1px)';
         wrapText(quote, x, y, (canvas.width - (x)*2), fontSize+10);
     };
     imageObj.src = background;
